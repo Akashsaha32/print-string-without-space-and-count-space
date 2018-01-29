@@ -1,0 +1,27 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main()
+{
+    char s[100];
+    cout << "Enter A String(For Terminate Enter E):\n";
+    cin.getline(s,100, 'E');
+    int cunt = 0, len = strlen(s);
+    //cout << "len = " << len;
+    int j=0;
+    for(unsigned int i=0; i< len; i++){
+        if(s[i] == ' '){
+            cunt++;
+        }else{
+            s[j] = s[i];
+            j++;
+        }
+    }
+    s[j] = '\0';
+        cout << "\nTotal Space: = " << cunt;
+        cout << "\nWithout space:\n" <<s;
+        cin.ignore(); //ignores/clears one or more characters from the input buffer.
+    return 0;
+}
